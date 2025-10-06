@@ -1,0 +1,23 @@
+# SIMS Backend
+
+Smart Inventory Management System backend built with Flask and MySQL.
+
+## Features
+- 🔐 Login & Logout
+- 📦 Add/Edit/Delete Inventory
+- 🔍 Search, Filter, Pagination
+- 📊 Charts (Chart.js)
+- 📄 CSV & PDF Export
+- 🧠 RESTful API
+- 🕵️ Activity Log
+- 🌙 Dark Mode Ready
+
+## Tech Stack
+- Flask
+- MySQL
+- Chart.js
+- Bootstrap
+
+IF YOU WOULD LIKE TO ADD ITEMS/LOGIN, 
+       USERNAME = admin
+       PASSWORD = 1234
