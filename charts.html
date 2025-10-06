@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2 class="mb-4">Inventory Chart</h2>
+
+<div class="card p-4 shadow-sm" style="background-color: #ffe4e1;">
+    <canvas id="inventoryChart" width="400" height="200"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('inventoryChart').getContext('2d');
+    const inventoryChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ labels|tojson }},
+            datasets: [{
+                label: 'Quantity',
+                data: {{ quantities|tojson }},
+                backgroundColor: '#ff69b4',
+                borderColor: '#ff1493',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#ff1493',
+                        font: {
+                            family: 'Comic Sans MS',
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#ffc0cb',
+                    titleColor: '#ff1493',
+                    bodyColor: '#000'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#ff1493',
+                        font: {
+                            family: 'Comic Sans MS',
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        color: '#f8c8dc'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#ff1493',
+                        font: {
+                            family: 'Comic Sans MS',
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        color: '#f8c8dc'
+                    }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

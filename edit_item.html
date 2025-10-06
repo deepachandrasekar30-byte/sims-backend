@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2 class="mb-4">Edit Inventory Item</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" value="{{ item[1] }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input type="number" name="quantity" class="form-control" value="{{ item[2] }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Supplier</label>
+        <input type="text" name="supplier" class="form-control" value="{{ item[3] }}" required>
+    </div>
+    <input type="hidden" name="id" value="{{ item[0] }}">
+    <button type="submit" class="btn btn-primary">Update Item</button>
+</form>
+{% endblock %}
